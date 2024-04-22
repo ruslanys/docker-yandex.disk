@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 MAINTAINER Ruslan Molchanov <ruslanys@gmail.com>
 
@@ -25,5 +25,5 @@ RUN apt-get update \
 
     && mkdir /root/Yandex.Disk
 
-
-CMD yandex-disk start --no-daemon --dir=/root/Yandex.Disk
+ENTRYPOINT ["yandex-disk"]
+CMD ["start", "--no-daemon", "--dir=/root/Yandex.Disk"]
